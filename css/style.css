@@ -32,7 +32,7 @@
   --font-size-3xl: 48px;
 
   /* Espaciado */
-  --spacing-xs: 8px;
+  --spacing-xs: 4px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
   --spacing-lg: 32px;
@@ -203,28 +203,11 @@ button {
    HEADER & NAVIGATION
    ============================================ */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.98);
   box-shadow: var(--shadow-sm);
   z-index: 1000;
-  transition: var(--transition-base);
-}
-
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../assets/images/fondo_header.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.15;
-  z-index: -1;
 }
 
 .header.scrolled {
@@ -232,7 +215,7 @@ button {
 }
 
 .navbar {
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-xs) 0;
 }
 
 .nav-container {
@@ -246,7 +229,7 @@ button {
 }
 
 .logo-img {
-  height: 150px;
+  height: 170px;
   width: auto;
   transition: transform var(--transition-base);
 }
@@ -263,7 +246,7 @@ button {
 }
 
 .nav-link {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text-dark);
   position: relative;
 }
@@ -314,7 +297,6 @@ button {
   justify-content: center;
   background: linear-gradient(135deg, var(--color-bg-light) 0%, #d4cfc5 100%);
   overflow: hidden;
-  margin-top: 110px;
 }
 
 .hero::before {
