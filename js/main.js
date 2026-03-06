@@ -7,10 +7,18 @@
 // ============================================
 const header = document.getElementById("header");
 const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
+const navMenu =
+  document.getElementById("nav-menu") || document.getElementById("navMenu");
 const navLinks = document.querySelectorAll(".nav-link");
 const backToTopBtn = document.getElementById("back-to-top");
 const floatingCta = document.getElementById("floating-cta");
+const floatingSocial = document.getElementById("floating-social");
+
+// Hero A/B test
+const heroTitle = document.getElementById("hero-title");
+const heroSubtitle = document.getElementById("hero-subtitle");
+const heroPrimaryCta = document.getElementById("hero-primary-cta");
+const heroSecondaryCta = document.getElementById("hero-secondary-cta");
 
 // Testimonials
 const testimonialCards = document.querySelectorAll(".testimonial-card");
@@ -22,6 +30,8 @@ const sliderDots = document.getElementById("slider-dots");
 // STICKY HEADER ON SCROLL
 // ============================================
 window.addEventListener("scroll", () => {
+  if (!header || !backToTopBtn) return;
+
   if (window.scrollY > 100) {
     header.classList.add("scrolled");
     backToTopBtn.classList.add("visible");
@@ -34,29 +44,83 @@ window.addEventListener("scroll", () => {
 // ============================================
 // MOBILE MENU TOGGLE
 // ============================================
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-  document.body.classList.toggle("menu-open");
-});
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    document.body.classList.toggle("menu-open");
+  });
+}
 
 // Close menu when clicking on a link
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
+    if (hamburger) hamburger.classList.remove("active");
+    if (navMenu) navMenu.classList.remove("active");
     document.body.classList.remove("menu-open");
   });
 });
 
 // Close menu when clicking outside
-document.addEventListener("click", (e) => {
-  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-    document.body.classList.remove("menu-open");
+if (hamburger && navMenu) {
+  document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+  });
+}
+
+// ============================================
+// HERO A/B TEST (copy + CTA)
+// ============================================
+const heroVariants = {
+  a: {
+    title:
+      'Limpieza Profesional con <span class="highlight">Confianza</span> y Resultados',
+    subtitle:
+      "Servicios para consorcios, edificios y empresas con personal capacitado, supervisión constante y cumplimiento en cada visita.",
+    primaryCta: "Solicitar Presupuesto",
+    secondaryCta: "Ver Soluciones",
+  },
+  b: {
+    title:
+      'Tu Edificio en Manos de un Equipo <span class="highlight">Confiable</span>',
+    subtitle:
+      "Creamos planes de limpieza a medida para consorcios y empresas, con seguimiento continuo y respuesta rápida.",
+    primaryCta: "Pedir Cotización Ahora",
+    secondaryCta: "Conocer Servicios",
+  },
+};
+
+function applyHeroVariant() {
+  if (!heroTitle || !heroSubtitle || !heroPrimaryCta || !heroSecondaryCta) {
+    return;
   }
-});
+
+  let variant = "a";
+
+  try {
+    const savedVariant = localStorage.getItem("ananda_hero_variant");
+    if (savedVariant === "a" || savedVariant === "b") {
+      variant = savedVariant;
+    } else {
+      variant = Math.random() < 0.5 ? "a" : "b";
+      localStorage.setItem("ananda_hero_variant", variant);
+    }
+  } catch {
+    variant = Math.random() < 0.5 ? "a" : "b";
+  }
+
+  const selectedVariant = heroVariants[variant];
+  heroTitle.innerHTML = selectedVariant.title;
+  heroSubtitle.textContent = selectedVariant.subtitle;
+  heroPrimaryCta.innerHTML = `<i class="fas fa-envelope"></i> ${selectedVariant.primaryCta}`;
+  heroSecondaryCta.innerHTML = `<i class="fas fa-arrow-down"></i> ${selectedVariant.secondaryCta}`;
+}
+
+applyHeroVariant();
 
 // ============================================
 // SMOOTH SCROLL FOR NAVIGATION LINKS
@@ -110,12 +174,14 @@ window.addEventListener("scroll", () => {
 // ============================================
 // BACK TO TOP BUTTON
 // ============================================
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+if (backToTopBtn) {
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
-});
+}
 
 // ============================================
 // TESTIMONIALS SLIDER
@@ -124,17 +190,21 @@ let currentTestimonial = 0;
 const totalTestimonials = testimonialCards.length;
 
 // Create dots
-for (let i = 0; i < totalTestimonials; i++) {
-  const dot = document.createElement("div");
-  dot.classList.add("dot");
-  if (i === 0) dot.classList.add("active");
-  dot.addEventListener("click", () => goToTestimonial(i));
-  sliderDots.appendChild(dot);
+if (sliderDots && totalTestimonials > 0) {
+  for (let i = 0; i < totalTestimonials; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goToTestimonial(i));
+    sliderDots.appendChild(dot);
+  }
 }
 
 const dots = document.querySelectorAll(".dot");
 
 function showTestimonial(index) {
+  if (!testimonialCards.length || !dots.length) return;
+
   // Hide all testimonials
   testimonialCards.forEach((card) => {
     card.classList.remove("active");
@@ -165,21 +235,26 @@ function goToTestimonial(index) {
 }
 
 // Event listeners for slider buttons
-nextBtn.addEventListener("click", nextTestimonial);
-prevBtn.addEventListener("click", prevTestimonial);
+if (nextBtn) nextBtn.addEventListener("click", nextTestimonial);
+if (prevBtn) prevBtn.addEventListener("click", prevTestimonial);
 
 // Auto-play testimonials (optional)
-let autoPlayInterval = setInterval(nextTestimonial, 5000);
+let autoPlayInterval;
+if (testimonialCards.length > 1) {
+  autoPlayInterval = setInterval(nextTestimonial, 5000);
+}
 
 // Pause auto-play on hover
 const testimonialSlider = document.getElementById("testimonials-slider");
-testimonialSlider.addEventListener("mouseenter", () => {
-  clearInterval(autoPlayInterval);
-});
+if (testimonialSlider && autoPlayInterval) {
+  testimonialSlider.addEventListener("mouseenter", () => {
+    clearInterval(autoPlayInterval);
+  });
 
-testimonialSlider.addEventListener("mouseleave", () => {
-  autoPlayInterval = setInterval(nextTestimonial, 5000);
-});
+  testimonialSlider.addEventListener("mouseleave", () => {
+    autoPlayInterval = setInterval(nextTestimonial, 5000);
+  });
+}
 
 // ============================================
 // SCROLL ANIMATIONS (FADE IN)
@@ -240,8 +315,13 @@ let scrollTimeout;
 let ctaShown = false;
 
 function showFloatingCta() {
-  if (!ctaShown) {
-    floatingCta.classList.add("visible");
+  if (!ctaShown && (floatingCta || floatingSocial)) {
+    if (floatingCta) {
+      floatingCta.classList.add("visible");
+    }
+    if (floatingSocial) {
+      floatingSocial.classList.add("visible");
+    }
     ctaShown = true;
   }
 }
@@ -271,11 +351,11 @@ window.addEventListener("load", () => {
 // ============================================
 console.log(
   "%c🌸 ANANDA SRL Cleaning",
-  "font-size: 20px; color: #2C4251; font-weight: bold;"
+  "font-size: 20px; color: #2C4251; font-weight: bold;",
 );
 console.log(
   "%cSitio web desarrollado con ❤️",
-  "font-size: 14px; color: #5A8CA7;"
+  "font-size: 14px; color: #5A8CA7;",
 );
 
 // ============================================

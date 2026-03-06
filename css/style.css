@@ -141,7 +141,9 @@ button {
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .fade-in.visible {
@@ -306,7 +308,8 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at 20% 50%,
       rgba(58, 90, 107, 0.1) 0%,
       transparent 50%
@@ -457,6 +460,10 @@ button {
   font-size: var(--font-size-xl);
   color: var(--color-primary);
   margin-bottom: var(--spacing-sm);
+}
+
+.service-label-short {
+  display: none;
 }
 
 .service-description {
@@ -804,6 +811,7 @@ button {
   background-color: var(--color-bg-white);
   font-weight: 600;
   color: var(--color-primary);
+  line-height: 1.4;
 }
 
 /* ============================================
@@ -1032,8 +1040,11 @@ textarea {
 }
 
 .footer-links a {
+  display: inline-block;
   color: rgba(255, 255, 255, 0.8);
   transition: var(--transition-fast);
+  line-height: 1.4;
+  white-space: normal;
 }
 
 .footer-links a:hover {
@@ -1169,4 +1180,51 @@ textarea {
 
 .floating-cta span {
   white-space: nowrap;
+}
+
+/* ============================================
+   FLOATING SOCIAL BUTTONS
+   ============================================ */
+.floating-social {
+  position: fixed;
+  right: 30px;
+  bottom: 95px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 997;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: all var(--transition-base);
+}
+
+.floating-social.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.floating-social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--color-primary);
+  border: 1px solid rgba(44, 66, 81, 0.2);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.floating-social-btn:hover {
+  transform: translateY(-2px);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.floating-social-btn i {
+  font-size: 20px;
 }
