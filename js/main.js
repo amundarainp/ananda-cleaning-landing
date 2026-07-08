@@ -350,7 +350,7 @@ window.addEventListener("load", () => {
 // CONSOLE MESSAGE
 // ============================================
 console.log(
-  "%c🌸 DEG SRL Cleaning",
+  "%c🌸 DEG SRL Limpieza",
   "font-size: 20px; color: #2C4251; font-weight: bold;",
 );
 console.log(

@@ -137,8 +137,19 @@
     padding: var(--spacing-sm) 0;
   }
 
-  .logo-img {
-    height: 40px;
+  .logo {
+    gap: 0;
+  }
+
+  .logo-mark {
+    width: 52px;
+    height: 42px;
+  }
+
+  .logo-wordmark {
+    width: 126px;
+    height: 44px;
+    object-position: center 92%;
   }
 
   .hamburger {
