@@ -1,5 +1,5 @@
 /* ============================================
-   ANANDA SRL - LANDING PAGE STYLES
+   DEG SRL - LANDING PAGE STYLES
    ============================================ */
 
 /* ============================================
@@ -959,7 +959,7 @@ textarea {
    ============================================ */
 .footer {
   background-color: var(--color-primary);
-  background-image: url("../assets/images/Ananda SRL.png");
+  background-image: url("../assets/images/DEG SRL.png");
   background-size: 400px;
   background-position: center;
   background-repeat: no-repeat;

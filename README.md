@@ -1,8 +1,8 @@
-# 🌸 ANANDA SRL - Landing Page
+# 🌸 DEG SRL - Landing Page
 
-Landing page profesional para **ANANDA SRL Cleaning**, empresa de servicios de limpieza profesional.
+Landing page profesional para **DEG SRL Cleaning**, empresa de servicios de limpieza profesional.
 
-![ANANDA SRL Logo](assets/images/logo.png)
+![DEG SRL Logo](assets/images/logo.png)
 
 ---
 
@@ -35,7 +35,7 @@ Landing page profesional para **ANANDA SRL Cleaning**, empresa de servicios de l
 ## 📦 Estructura del Proyecto
 
 ```
-ananda-cleaning-landing/
+deg-srl-cleaning-landing/
 │
 ├── index.html                 # Página principal
 │
@@ -49,7 +49,7 @@ ananda-cleaning-landing/
 │
 ├── assets/
 │   ├── images/               # Imágenes del sitio
-│   │   └── logo.png         # Logo de ANANDA (AGREGAR)
+│   │   └── logo.png         # Logo de DEG SRL (AGREGAR)
 │   └── icons/                # Iconos personalizados
 │
 └── README.md                 # Este archivo
@@ -63,10 +63,10 @@ ananda-cleaning-landing/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/amundarainp/ananda-cleaning-landing. git
+git clone https://github.com/tu-usuario/deg-srl-cleaning-landing.git
 
 # Entrar al directorio
-cd ananda-cleaning-landing
+cd deg-srl-cleaning-landing
 
 # Abrir con tu editor favorito
 code .
@@ -169,7 +169,7 @@ Reemplaza los testimonios placeholder con testimonios reales de clientes.
 ```html
 <p>+54 11 XXXX-XXXX</p>
 <!-- Tu teléfono -->
-<p>info@anandasrl.com</p>
+<p>info@degsrl.com</p>
 <!-- Tu email -->
 <p>Buenos Aires, Argentina</p>
 <!-- Tu ubicación -->
@@ -201,7 +201,7 @@ Reemplaza el placeholder con foto del equipo:
 
 ```html
 <div class="about-image">
-  <img src="assets/images/equipo.jpg" alt="Equipo ANANDA" />
+  <img src="assets/images/equipo.jpg" alt="Equipo DEG SRL" />
 </div>
 ```
 
@@ -292,7 +292,7 @@ async function sendToBackend(formData) {
 3. Source: **Deploy from branch**
 4. Branch: **main** / **root**
 5. Click **Save**
-6. Tu sitio estará en: `https://amundarainp.github.io/ananda-cleaning-landing/`
+6. Tu sitio estará en: `https://tu-usuario.github.io/deg-srl-cleaning-landing/`
 
 ### Netlify (Gratis, con dominio custom)
 
@@ -419,13 +419,13 @@ Checklist para personalizar el sitio:
 
 - 📧 Email: [Tu email de contacto]
 - 💬 WhatsApp: [Tu número]
-- 📝 Issues: [GitHub Issues](https://github.com/amundarainp/ananda-cleaning-landing/issues)
+- 📝 Issues: [GitHub Issues](https://github.com/tu-usuario/deg-srl-cleaning-landing/issues)
 
 ---
 
 ## 📄 Licencia
 
-Este proyecto fue creado específicamente para **ANANDA SRL**.
+Este proyecto fue creado específicamente para **DEG SRL**.
 
 ---
 

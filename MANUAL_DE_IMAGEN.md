@@ -1,6 +1,6 @@
 # MANUAL DE IMAGEN DE MARCA
 
-## ANANDA SRL
+## DEG SRL
 
 Versión: 1.0
 Fecha: marzo 2026
@@ -10,7 +10,7 @@ Alcance: uso digital y comercial (web, redes, piezas de venta y comunicación in
 
 ## 1) Propósito del manual
 
-Este manual define cómo presentar la marca ANANDA SRL de forma consistente, profesional y confiable en todos los puntos de contacto.
+Este manual define cómo presentar la marca DEG SRL de forma consistente, profesional y confiable en todos los puntos de contacto.
 
 Objetivos:
 
@@ -41,7 +41,7 @@ Cumplimiento, supervisión y resultados consistentes en cada servicio.
 
 ### 2.4 Propuesta de valor
 
-ANANDA SRL combina personal capacitado, procesos claros y productos responsables con el ambiente para sostener espacios impecables y una experiencia de servicio confiable.
+DEG SRL combina personal capacitado, procesos claros y productos responsables con el ambiente para sostener espacios impecables y una experiencia de servicio confiable.
 
 ---
 
@@ -70,14 +70,14 @@ Necesidades clave del público:
 
 Ubicación de activos:
 
-- `assets/images/Ananda SRL.png`
-- `assets/images/Ananda_srl_2.png`
-- `assets/images/Ananda_srl_3.png`
+- `assets/images/DEG SRL.png`
+- `assets/images/DEG_srl_2.png`
+- `assets/images/DEG_srl_3.png`
 
 Uso recomendado:
 
-- Encabezado web: `Ananda_srl_3.png`
-- Pie de página o marca de agua: `Ananda SRL.png`
+- Encabezado web: `DEG_srl_3.png`
+- Pie de página o marca de agua: `DEG SRL.png`
 
 ### 4.2 Área de seguridad
 
@@ -361,4 +361,4 @@ Proceso recomendado:
 
 ---
 
-Este manual busca mantener una marca coherente, confiable y comercialmente efectiva en cada punto de contacto de ANANDA SRL.
+Este manual busca mantener una marca coherente, confiable y comercialmente efectiva en cada punto de contacto de DEG SRL.

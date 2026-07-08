@@ -1,5 +1,5 @@
 /* ============================================
-   ANANDA SRL - MAIN JAVASCRIPT
+   DEG SRL - MAIN JAVASCRIPT
    ============================================ */
 
 // ============================================
@@ -102,12 +102,12 @@ function applyHeroVariant() {
   let variant = "a";
 
   try {
-    const savedVariant = localStorage.getItem("ananda_hero_variant");
+    const savedVariant = localStorage.getItem("deg_srl_hero_variant");
     if (savedVariant === "a" || savedVariant === "b") {
       variant = savedVariant;
     } else {
       variant = Math.random() < 0.5 ? "a" : "b";
-      localStorage.setItem("ananda_hero_variant", variant);
+      localStorage.setItem("deg_srl_hero_variant", variant);
     }
   } catch {
     variant = Math.random() < 0.5 ? "a" : "b";
@@ -350,7 +350,7 @@ window.addEventListener("load", () => {
 // CONSOLE MESSAGE
 // ============================================
 console.log(
-  "%c🌸 ANANDA SRL Cleaning",
+  "%c🌸 DEG SRL Cleaning",
   "font-size: 20px; color: #2C4251; font-weight: bold;",
 );
 console.log(
