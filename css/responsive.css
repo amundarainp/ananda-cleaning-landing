@@ -134,7 +134,7 @@
        HEADER & NAVIGATION - MOBILE
        ============================================ */
   .navbar {
-    padding: var(--spacing-sm) 0;
+    padding: 2px 0;
   }
 
   .logo-img {

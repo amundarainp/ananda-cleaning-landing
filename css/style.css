@@ -217,7 +217,7 @@ button {
 }
 
 .navbar {
-  padding: var(--spacing-xs) 0;
+  padding: 2px 0;
 }
 
 .nav-container {
