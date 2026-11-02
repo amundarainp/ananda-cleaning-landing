@@ -448,87 +448,51 @@
             </p>
           </div>
 
-          <div class="gallery-grid">
-            <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <div class="before-after">
-                  <span class="label before">ANTES</span>
-                  <i class="fas fa-arrows-alt-h"></i>
-                  <span class="label after">DESPUÉS</span>
+          <div class="comparison-grid">
+            <article class="comparison-card">
+              <div class="comparison-media" style="--position: 50%">
+                <img class="comparison-image comparison-image-after" src="assets/gallery/hall-despues.webp" alt="Hall de ingreso limpio después del servicio" loading="lazy" />
+                <div class="comparison-before-layer">
+                  <img class="comparison-image" src="assets/gallery/hall-antes.webp" alt="Hall de ingreso antes de la limpieza" loading="lazy" />
                 </div>
+                <span class="comparison-label comparison-label-before">Antes</span>
+                <span class="comparison-label comparison-label-after">Después</span>
+                <div class="comparison-divider" aria-hidden="true"><span class="comparison-handle"><i class="fas fa-arrows-alt-h"></i></span></div>
+                <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Comparar el hall antes y después de la limpieza" />
               </div>
-              <p class="gallery-caption">
-                <span class="service-label-full"
-                  >Limpieza de Edificios (Consorcios)</span
-                >
-                <span class="service-label-short">Edificios y Consorcios</span>
-              </p>
-            </div>
+              <h3 class="comparison-title">Hall de Ingreso</h3>
+            </article>
 
-            <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <div class="before-after">
-                  <span class="label before">ANTES</span>
-                  <i class="fas fa-arrows-alt-h"></i>
-                  <span class="label after">DESPUÉS</span>
+            <article class="comparison-card">
+              <div class="comparison-media" style="--position: 50%">
+                <img class="comparison-image comparison-image-after" src="assets/gallery/ascensor-despues.webp" alt="Ascensor limpio y brillante después del servicio" loading="lazy" />
+                <div class="comparison-before-layer">
+                  <img class="comparison-image" src="assets/gallery/ascensor-antes.webp" alt="Ascensor opaco antes de la limpieza" loading="lazy" />
                 </div>
+                <span class="comparison-label comparison-label-before">Antes</span>
+                <span class="comparison-label comparison-label-after">Después</span>
+                <div class="comparison-divider" aria-hidden="true"><span class="comparison-handle"><i class="fas fa-arrows-alt-h"></i></span></div>
+                <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Comparar el ascensor antes y después de la limpieza" />
               </div>
-              <p class="gallery-caption">Oficina Corporativa</p>
-            </div>
+              <h3 class="comparison-title">Limpieza de Ascensor</h3>
+            </article>
 
-            <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <div class="before-after">
-                  <span class="label before">ANTES</span>
-                  <i class="fas fa-arrows-alt-h"></i>
-                  <span class="label after">DESPUÉS</span>
+            <article class="comparison-card">
+              <div class="comparison-media" style="--position: 50%">
+                <img class="comparison-image comparison-image-after" src="assets/gallery/entrada-despues.webp" alt="Entrada vidriada limpia después del servicio" loading="lazy" />
+                <div class="comparison-before-layer">
+                  <img class="comparison-image" src="assets/gallery/entrada-antes.webp" alt="Entrada vidriada antes de la limpieza" loading="lazy" />
                 </div>
+                <span class="comparison-label comparison-label-before">Antes</span>
+                <span class="comparison-label comparison-label-after">Después</span>
+                <div class="comparison-divider" aria-hidden="true"><span class="comparison-handle"><i class="fas fa-arrows-alt-h"></i></span></div>
+                <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Comparar la entrada antes y después de la limpieza" />
               </div>
-              <p class="gallery-caption">Post-Construcción</p>
-            </div>
-
-            <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <div class="before-after">
-                  <span class="label before">ANTES</span>
-                  <i class="fas fa-arrows-alt-h"></i>
-                  <span class="label after">DESPUÉS</span>
-                </div>
-              </div>
-              <p class="gallery-caption">
-                <span class="service-label-full"
-                  >Parquizaciones y Mantenimiento General de Edificios</span
-                >
-                <span class="service-label-short"
-                  >Parquizaciones y Mantenimiento</span
-                >
-              </p>
-            </div>
-
-            <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <div class="before-after">
-                  <span class="label before">ANTES</span>
-                  <i class="fas fa-arrows-alt-h"></i>
-                  <span class="label after">DESPUÉS</span>
-                </div>
-              </div>
-              <p class="gallery-caption">Local Comercial</p>
-            </div>
-
-            <div class="gallery-item">
-              <div class="gallery-placeholder">
-                <div class="before-after">
-                  <span class="label before">ANTES</span>
-                  <i class="fas fa-arrows-alt-h"></i>
-                  <span class="label after">DESPUÉS</span>
-                </div>
-              </div>
-              <p class="gallery-caption">Alfombras y Tapizados</p>
-            </div>
+              <h3 class="comparison-title">Vidrios y Acceso</h3>
+            </article>
           </div>
 
-          <!-- TODO: Reemplazar con imágenes reales de trabajos realizados -->
+
         </div>
       </section>
 
@@ -777,6 +741,7 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+    <script src="js/gallery-comparison.js"></script>
     <script src="js/form-handler.js"></script>
   </body>
 </html>
