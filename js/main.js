@@ -86,7 +86,7 @@ const heroVariants = {
   },
   b: {
     title:
-      'Tu Edificio en Manos de un Equipo <span class="highlight">Confiable</span>',
+      'Soluciones Integrales de Limpieza en Manos de un Equipo <span class="highlight">Confiable</span>',
     subtitle:
       "Creamos planes de limpieza a medida para consorcios y empresas, con seguimiento continuo y respuesta rápida.",
     primaryCta: "Pedir Cotización Ahora",
