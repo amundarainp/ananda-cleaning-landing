@@ -61,10 +61,9 @@ document.querySelectorAll('.comparison-media').forEach((comparison) => {
   const goTo = (index) => {
     const maxStart = Math.max(0, slides.length - visibleCount());
     active = index > maxStart ? 0 : index < 0 ? maxStart : index;
-    slides[active].scrollIntoView({
-      behavior: reducedMotion ? 'auto' : 'smooth',
-      block: 'nearest',
-      inline: 'start'
+    viewport.scrollTo({
+      left: slides[active].offsetLeft,
+      behavior: reducedMotion ? 'auto' : 'smooth'
     });
   };
 

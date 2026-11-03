@@ -1553,3 +1553,24 @@ textarea {
   .work-carousel-viewport { scroll-behavior: auto; }
   .work-slide img, .work-carousel-progress span, .deg-method-number { transition: none; }
 }
+
+
+/* Ajuste de escala del carrusel */
+.work-showcase {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.work-slide {
+  height: 360px;
+  aspect-ratio: auto;
+}
+@media (max-width: 900px) {
+  .work-slide { height: 340px; }
+}
+@media (max-width: 580px) {
+  .work-slide {
+    flex-basis: 82%;
+    height: 350px;
+  }
+}
