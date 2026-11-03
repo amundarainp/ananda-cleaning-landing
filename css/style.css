@@ -1310,3 +1310,246 @@ textarea {
 .floating-social-btn i {
   font-size: 20px;
 }
+
+
+/* ============================================
+   MÉTODO DEG
+   ============================================ */
+.deg-method {
+  position: relative;
+  overflow: hidden;
+  align-self: center;
+  padding: 2.25rem;
+  color: #fff;
+  background: linear-gradient(145deg, #17364a 0%, #244f68 58%, #2f718f 100%);
+  border-radius: 26px;
+  box-shadow: 0 24px 60px rgba(23, 54, 74, 0.28);
+  isolation: isolate;
+}
+.deg-method::before,
+.deg-method::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+  z-index: -1;
+}
+.deg-method::before { width: 270px; height: 270px; top: -145px; right: -90px; }
+.deg-method::after { width: 180px; height: 180px; top: -100px; right: -45px; }
+.deg-method-glow {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  right: -90px;
+  bottom: -105px;
+  background: #68b7d9;
+  filter: blur(60px);
+  opacity: .22;
+  z-index: -1;
+}
+.deg-method-kicker,
+.work-showcase-kicker {
+  display: inline-block;
+  color: #86d1ef;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.deg-method-header h3 {
+  margin: .4rem 0 .35rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  color: #fff;
+}
+.deg-method-header h3 strong { color: #86d1ef; }
+.deg-method-header > p { margin: 0; color: rgba(255,255,255,.72); }
+.deg-method-steps {
+  position: relative;
+  display: grid;
+  gap: .95rem;
+  margin: 1.7rem 0;
+  padding: 0;
+  list-style: none;
+}
+.deg-method-steps::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 26px;
+  bottom: 26px;
+  width: 1px;
+  background: linear-gradient(#86d1ef, rgba(134,209,239,.08));
+}
+.deg-method-steps li {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+.deg-method-number {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  color: #17364a;
+  background: #fff;
+  border: 4px solid rgba(134,209,239,.42);
+  border-radius: 50%;
+  font-size: .7rem;
+  font-weight: 900;
+  z-index: 1;
+  transition: transform .25s ease, background .25s ease;
+}
+.deg-method-steps li:hover .deg-method-number { transform: scale(1.08); background: #86d1ef; }
+.deg-method-steps h4 { margin: 0 0 .15rem; color: #fff; font-size: 1rem; }
+.deg-method-steps p { margin: 0; color: rgba(255,255,255,.68); font-size: .86rem; line-height: 1.45; }
+.deg-method-signature {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  padding: .9rem 1rem;
+  color: #17364a;
+  background: #fff;
+  border-radius: 14px;
+  font-size: .86rem;
+  font-weight: 800;
+}
+.deg-method-signature i { color: #4f9fc2; font-size: 1.1rem; }
+
+/* ============================================
+   CARRUSEL DE TRABAJOS
+   ============================================ */
+.work-showcase { margin-top: clamp(3rem, 7vw, 5.5rem); }
+.work-showcase-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 1.4rem;
+}
+.work-showcase-kicker { color: #4f9fc2; }
+.work-showcase-heading h3 {
+  margin: .35rem 0 0;
+  color: #17364a;
+  font-size: clamp(1.7rem, 3.6vw, 2.65rem);
+  line-height: 1.08;
+}
+.work-carousel-status {
+  display: flex;
+  align-items: baseline;
+  gap: .45rem;
+  color: #80909a;
+  font-size: .9rem;
+  font-weight: 700;
+}
+#work-current { color: #17364a; font-size: 1.65rem; }
+.work-carousel-divider { color: #4f9fc2; }
+.work-carousel-shell { position: relative; }
+.work-carousel-viewport {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-radius: 22px;
+  outline: none;
+}
+.work-carousel-viewport::-webkit-scrollbar { display: none; }
+.work-carousel-viewport:focus-visible { box-shadow: 0 0 0 4px rgba(79,159,194,.22); }
+.work-carousel-track { display: flex; gap: 1rem; }
+.work-slide {
+  position: relative;
+  flex: 0 0 calc((100% - 2rem) / 3);
+  min-width: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  scroll-snap-align: start;
+  border-radius: 20px;
+  background: #dfe8ec;
+  box-shadow: 0 14px 35px rgba(23,54,74,.14);
+}
+.work-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .55s ease;
+}
+.work-slide:hover img { transform: scale(1.035); }
+.work-slide::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgba(7,25,36,.9));
+  pointer-events: none;
+}
+.work-slide figcaption {
+  position: absolute;
+  left: 1.1rem;
+  right: 1.1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: .65rem;
+  align-items: center;
+  color: #fff;
+  font-size: .93rem;
+  font-weight: 700;
+  z-index: 1;
+}
+.work-slide figcaption span {
+  color: #86d1ef;
+  font-size: .7rem;
+  letter-spacing: .08em;
+}
+.work-carousel-btn {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: #17364a;
+  background: rgba(255,255,255,.94);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 10px 28px rgba(23,54,74,.2);
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 3;
+  transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+.work-carousel-btn:hover { color: #fff; background: #4f9fc2; transform: translateY(-50%) scale(1.06); }
+.work-carousel-prev { left: -24px; }
+.work-carousel-next { right: -24px; }
+.work-carousel-progress {
+  height: 3px;
+  margin-top: 1.35rem;
+  overflow: hidden;
+  background: #dce5e9;
+  border-radius: 99px;
+}
+.work-carousel-progress span {
+  display: block;
+  width: calc(100% / 27);
+  height: 100%;
+  background: linear-gradient(90deg, #4f9fc2, #86d1ef);
+  border-radius: inherit;
+  transform-origin: left center;
+  transition: transform .35s ease;
+}
+
+@media (max-width: 900px) {
+  .deg-method { padding: 1.8rem; }
+  .work-slide { flex-basis: calc((100% - 1rem) / 2); }
+  .work-carousel-prev { left: .65rem; }
+  .work-carousel-next { right: .65rem; }
+}
+@media (max-width: 580px) {
+  .work-showcase-heading { align-items: center; }
+  .work-slide { flex-basis: 86%; aspect-ratio: 4 / 5; }
+  .work-carousel-status { display: none; }
+  .work-carousel-btn { width: 42px; height: 42px; }
+  .deg-method { padding: 1.45rem; border-radius: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-carousel-viewport { scroll-behavior: auto; }
+  .work-slide img, .work-carousel-progress span, .deg-method-number { transition: none; }
+}
